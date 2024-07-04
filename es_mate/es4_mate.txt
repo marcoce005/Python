@@ -1,0 +1,7 @@
+
+Dove bisogna posizionare il punto P per ottenere 2 quadrati con l'area maggiore
+
+A--------------------------------------B
+
+Possimo disporre il punto P in corrispondenza del punto A o B, 
+cosi' da ottenere un quadrato di (AB)^2 e uno che e' pressoche' zero. 
