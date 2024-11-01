@@ -15,3 +15,5 @@ while n != "":
 
     print(f"Somma parziale:\t{tot}\nMin:\t{min}\nMax:\t{max}\nPari:\t{n_even}\nDispari:\t{n_odd}")
     n = input("Inserire un numero intero:\t")
+
+    ciro
