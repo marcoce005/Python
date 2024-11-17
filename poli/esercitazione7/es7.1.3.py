@@ -6,7 +6,7 @@ def remove_min(l):
     l.pop([(i, min := e) for i, e in enumerate(l) if e <= min][-1][0])
 
 
-v = [randint(10, 100) for i in range(11)]
+v = [randint(10, 100) for i in range(10)]
 
 print("Lista:\t\t\t", *v)
 
