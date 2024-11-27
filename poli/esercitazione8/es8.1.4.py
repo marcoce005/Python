@@ -23,10 +23,12 @@ def change_coloums(m):
         r[0] = 1
         r[-1] = 1
 
+
 def sum_mat(m):
     tot = 0
     [[tot := tot + e for e in r] for r in m]
     return tot
+
 
 M = 10
 N = 11
