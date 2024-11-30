@@ -30,6 +30,25 @@ def find_second_max(l):
     return max([e for e in tmp if e != max(tmp)])
 
 
+def is_sorted(l):
+    return l == sorted(l)
+
+
+def there_are_double(l):
+    pre = l[0]
+    for i in range(1, len(l)):
+        if l[i] == pre:
+            return True
+    return False
+
+
+def there_are_only_double(l):
+    for e in l:
+        if l.count(e) == 1:
+            return False
+    return True
+
+
 l = [e for e in range(10)]
 
 print(f"Before:\t{l}")
@@ -54,3 +73,12 @@ print(f"After:\t{l}")
 
 print(f"\nBefore:\t{l}")
 print(f"Massimo II:\t{find_second_max(l)}")
+
+print(f"\nBefore:\t{l}")
+print(f"Is sorted:\t{is_sorted(l)}")
+
+print(f"\nBefore:\t{l}")
+print(f"There are double:\t{there_are_double(l)}")
+
+print(f"\nBefore:\t{l}")
+print(f"There are only double:\t{there_are_only_double(l)}")
