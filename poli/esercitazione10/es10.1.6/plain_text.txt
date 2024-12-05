@@ -1,0 +1,3 @@
+Ad esempio, se la parola che si usa come chiave è FEATHER, per prima cosa si eliminano le 
+lettere duplicate, ottenendo FEATHR, e poi si aggiungono in coda le rimanenti lettere dell’alfabeto,
+in ordine inverso. Si ottiene così la sequenza seguente.
