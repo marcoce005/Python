@@ -3,7 +3,7 @@ Contiene numeri come 12345, e lettere accentate: è, à, ù.
 Puoi trovare anche simboli speciali: @, #, $, %, &.  
 Il totale delle righe qui è di 4 (inclusi gli spazi).  
 Anche 3.14 (il π) è un numero!  
-Emoji? Non proprio qui! Solo ASCII :)  
+Emoii? Non proprio qui! Solo ASCII :)  
 Un po' di matematica: 2+2=4, e 10÷2=5.  
 Mi fermo a 7 righe per ora, per essere sintetico.  
 ...  

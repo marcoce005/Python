@@ -47,11 +47,24 @@ def convert(a, b, c):
     return c[a_r][b_c], c[b_r][a_c]
 
 
+def are_there_2_char(s):
+    count = 0
+    for c in s:
+        if count == 2:
+            return True
+        if 65 <= ord(c.upper()) <= 90:
+            count += 1
+    return False
+
+
 def get_couple(s):
     el = []
     i = 0
     pre = ""
     middle = ""
+
+    if not are_there_2_char(s):
+        return el, s, middle
 
     while len(el) != 2:
         if 65 <= ord(s[i].upper()) <= 90:
@@ -70,6 +83,8 @@ def read_file(f, c):
     out = ""
 
     for line in f:
+        line = line.replace("J", "I")
+        line = line.replace("j", "i")
         l = ""
         i = 0
         while len(l) != len(line):
@@ -78,13 +93,21 @@ def read_file(f, c):
                 i += 1
             else:
                 el, pre, middle = get_couple(line[i:].upper())
-                a, b = convert(el[0], el[1], c)
+
+                if len(el) == 0:
+                    a = b = ""
+                else:
+                    a, b = convert(el[0], el[1], c)
 
                 l += pre + a + middle + b
+                i += len(el) + len(pre) + len(middle)
 
-                i += 2 + len(pre) + len(middle)
+        l = list(l)
+        for i in range(len(l)):
+            if str(line[i]).islower():
+                l[i] = l[i].lower()
 
-        out += l
+        out += "".join(l)
     return out
 
 
