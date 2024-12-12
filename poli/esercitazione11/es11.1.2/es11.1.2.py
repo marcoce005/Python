@@ -1,3 +1,6 @@
+from operator import itemgetter
+
+
 def clean_word(s):
     return "".join([c for c in s if c.isalpha()])
 
@@ -125,6 +128,7 @@ def filter_dict(d):
 
 
 def get_first_five(d):
+    # return dict(sorted(d.items(), key=itemgetter("value"), reverse=True)[:5])
     return dict(sorted(d.items(), key=lambda x: x[1], reverse=True)[:5])
 
 
