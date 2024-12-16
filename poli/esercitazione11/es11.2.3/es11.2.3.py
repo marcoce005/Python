@@ -5,7 +5,7 @@ def print_maze(m):
 
 def get_maze():
     with open("./maze.txt") as file:
-        return [list(line.rstrip()) for line in file]
+        return [list(line.replace("\n", "")) for line in file]
 
 
 def exist_coordinates(m, x, y):
