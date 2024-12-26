@@ -1,12 +1,3 @@
-#{mul(754,260)]$![don't()mul(351,612)^- mul(140~/~-{)mul(221,68)what()
-mul(162,403)when()@$select()}&+what()when()mul(700,655)mul(130,206)
-mul(945,326)~how(514,907)%^>#$,;select()mul(937,671)do()(:{?'!from() }
-mul(819,952)}:^when()%%$mul(408,89)mul(614$:#@[);$mul(66,163)+$mul(449,71)
-#why()(who()select()]how(421,129)mul(253,770) who(781,473)]
-mul(634,363)$when()*how() &mul(445,296)how()%>;'what()/,when()
-mul,>where()##mul(855,89)*select()}why()*select(59,18)<[
-mul(587,594@$?*where()mul(156,269)[]/mul(253,48)[]?where()*;
-mul(439,325)@who()who())*?when()#>from()mul(957,103)
-mul(199,630<(<!#<mul(632,932)!?)-{,mul}%what(){!')don't()~)+{>%
-where(220,646))!mul(924,669)~/{why(){mul(691,638)*mul(432,319)!]:'-?#
-from()mul(682,628)where()])why()#mul(103,731)'why()>what()$<why()
+#{mul(754,260)]$![don't()mul(351,612)^- mul(140~/~-{)mul(221,68)what()mul(
+11,3)mul(162,403)when()@$select()}&+what()when()mul(700,655)mul(130,206)
+mul(945,326)~how(514,907)%^>#$,;select()mul(937,671)do()(:{?'!from()
