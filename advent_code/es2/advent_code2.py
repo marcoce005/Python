@@ -23,7 +23,7 @@ def check_reports(r):
     return [check_sort(levels) and check_delta(levels) for levels in r]
 
 
-reports = get_data("./input.txt")
+reports = get_data("./test.txt")
 
 print_mat(reports)
 

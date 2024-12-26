@@ -18,6 +18,12 @@ def create_lists(path):
     return l[0], l[1]
 
 
-l1, l2 = create_lists("./numeri_casuali.txt")
+def count_and_mul_occurence(a, b):
+    return [e * b.count(e) for e in a]
+
+
+l1, l2 = create_lists("./test.txt")
 
 print(f"Distanza delle liste:\t{cal_distance(l1, l2)}")
+
+print(f"Added occurence:\t{sum(count_and_mul_occurence(l1, l2))}")

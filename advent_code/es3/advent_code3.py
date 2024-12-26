@@ -1,3 +1,6 @@
+import re
+
+
 def clean_line(s):
     correct_characters = [str(i) for i in range(10)] + list("mul(,)")
     return "".join([c for c in s if c in correct_characters])
@@ -17,6 +20,10 @@ def check_correct_args(s):
         return False
 
     arguments = s[1:].split(")")[0].split(",")
+
+    if len(arguments) != 2:
+        return False
+
     for e in arguments:
         if not e.isdigit():
             return False
@@ -36,21 +43,38 @@ def mul_args(l):
 
 
 def print_result(l):
+    tot = 0
     for line in l:
-        for i, arg in enumerate(line):
-            print(*arg, sep="*", end=" + " if i != len(line) - 1 else " = ")
-        print(sum(mul_args(line)))
+        # for i, arg in enumerate(line):
+        # print(*arg, sep="*", end=" + " if i != len(line) - 1 else " = ")
+        tot += sum(mul_args(line))
+        # print(sum(mul_args(line)))
+    return tot
 
 
 def main():
-    FILE_PATH = "./corrupted.txt"
+    FILE_PATH = "./test.txt"
 
     try:
         clean_file = read_file(FILE_PATH)
 
+        pattern = r"mul\((\d+),(\d+)\)"
+        matches = [[(int(e[0]), int(e[1])) for e in  re.findall(pattern, line)] for line in clean_file]
+
+        result = [e[0] * e[1] for line in matches for e in line]
+        
+        print(sum(result))
+        # print(matches)
+
         arguments = [extract_args(line) for line in clean_file]
 
-        print_result(arguments)
+        # print(arguments)
+        
+        # print(arguments == matches)
+
+        add_all = print_result(arguments)
+        
+        print(f"\n\nAdd all = {add_all}")
 
     except FileNotFoundError:
         print("File not found")
