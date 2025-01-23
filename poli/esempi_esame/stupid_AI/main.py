@@ -38,7 +38,7 @@ def filter_by_first_word(d, w):
 
 
 def random_word(l):
-    return
+    return choice(list(l.keys())).split()[1]
 
 
 def generate_text(l, s):

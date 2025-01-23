@@ -1,0 +1,20 @@
+Nome file: ./GCB2023.csv
+Anni monitorati: da 2013 a 2022
+Paesi monitorati: AUS BRA GBR ITA MEX 
+Quantita monitorate: Totale Carbone Petrolio Gas 
+
+Paese: AUS - Valore: Gas
+      2013      2014      2015      2016      2017      2018      2019      2020      2021      2022
+     69870     70771     71500     73935     75430     78468     80661     83479     80159     83499
+Differenza: +19.51%
+
+Paese: ITA - Valore: Petrolio
+      2013      2014      2015      2016      2017      2018      2019      2020      2021      2022
+    159757    158481    162217    156806    149602    153616    149355    128330    147624    155162
+Differenza: -2.88%
+
+Anno: 2021 - Valore: Petrolio
+Paese massimo: BRA (305275, +126.66% rispetto al minimo)
+
+Anno: 2016 - Valore: Gas
+Paese massimo: GBR (165742, +137.91% rispetto al minimo)
