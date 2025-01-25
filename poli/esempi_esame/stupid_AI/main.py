@@ -8,51 +8,49 @@ def read_file_replace_all_punctuation(path):
         for e in punctuation:
             if e in s:
                 s = s.replace(e, "")
-    return s
+    return s.lower().split()
 
 
 def count_lemmi(text):
     d = {}
-    length = len(text.split("\n"))
-    for j, line in enumerate(text.split("\n")):
-        print(f"Traing:\t{j / length * 100:.2f} %")
-        if line != "\n":
-            line = line.split()
-            for i in range(len(line) - 1):
-                if f"{line[i]} {line[i + 1]}" not in d:
-                    d[f"{line[i]} {line[i + 1]}"] = text.count(
-                        f"{line[i]} {line[i + 1]}"
-                    )
+    # length = len(text.split("\n"))
+    # for j, line in enumerate(text.split("\n")):
+    #     print(f"Traing:\t{j / length * 100:.2f} %")
+    #     if line != "\n":
+    #         line = line.split()
+    #         for i in range(len(line) - 1):
+    #             if f"{line[i]} {line[i + 1]}" not in d:
+    #                 d[f"{line[i]} {line[i + 1]}"] = text.count(
+    #                     f"{line[i]} {line[i + 1]}"
+    #                 )
+
+    for i in range(len(text) - 1):
+        if text[i] not in d:
+            d[text[i]] = {}
+        if text[i + 1] in d[text[i]]:
+            d[text[i]][text[i + 1]] += 1
+        else:
+            d[text[i]][text[i + 1]] = 1
 
     return d
 
 
-def filter_by_first_word(d, w):
-    return dict(
-        sorted(
-            {k: v for k, v in d.items() if k.split()[0] == w}.items(),
-            key=lambda x: x[1],
-            reverse=True,
-        )[:5]
-    )
+def next_word(d):
+    return choice(sorted(d.items(), key=lambda x: x[1], reverse=True)[:5])[0]
 
 
 def random_word(l):
-    return choice(list(l.keys())).split()[1]
+    return choice(list(l.keys()))
 
 
 def generate_text(l, s):
-    lemmi_start_with_word = filter_by_first_word(l, s)
+    if s not in l:
+        s = random_word(l)
 
     text = ""
     for _ in range(randint(5, 50)):
-        if len(lemmi_start_with_word) == 0:
-            s = random_word(l)
-            lemmi_start_with_word = filter_by_first_word(l, s)
-
-        s = choice(list(lemmi_start_with_word.keys())).split()[1]
+        s = next_word(l[s])
         text += s + " "
-        lemmi_start_with_word = filter_by_first_word(l, s)
 
     return text
 
@@ -60,7 +58,7 @@ def generate_text(l, s):
 def main():
     FILE_PATH = "./promessisposi.txt"
 
-    text = read_file_replace_all_punctuation(FILE_PATH).lower()
+    text = read_file_replace_all_punctuation(FILE_PATH)
     lemmi = count_lemmi(text)
 
     start_word = input("\nInserire la parola di inizio:\t").lower()
