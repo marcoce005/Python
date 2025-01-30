@@ -35,9 +35,16 @@ def check_vertical(g, r, c, v):
         return False
 
 
-def check_diagonal(g, r, c, v):
+def check_diagonal_pos(g, r, c, v):
     try:
         return g[r][c] + g[r + 1][c + 1] + g[r + 2][c + 2] + g[r + 3][c + 3] == v * 4
+    except:
+        return False
+
+
+def check_diagonal_neg(g, r, c, v):
+    try:
+        return g[r][c] + g[r - 1][c + 1] + g[r - 2][c + 2] + g[r - 3][c + 3] == v * 4
     except:
         return False
 
@@ -48,7 +55,8 @@ def check_win(g, type):
             if (
                 check_horizontal(g, r, c, type)
                 or check_vertical(g, r, c, type)
-                or check_diagonal(g, r, c, type)
+                or check_diagonal_pos(g, r, c, type)
+                or check_diagonal_neg(g, r, c, type)
             ):
                 return True
 
@@ -67,7 +75,7 @@ def play_game(gr, mv):
 
 
 def main():
-    PATH_MOVES = "./mosse.txt"
+    PATH_MOVES = "./mosse2.txt"
 
     grid = [["0" for _ in range(6)] for _ in range(7)]
     moves = get_moves(PATH_MOVES)
