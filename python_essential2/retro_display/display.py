@@ -1,8 +1,8 @@
 def print_numbers(m, d):
     output = ""
-    for i in range(5):          # iterate layer by layer
+    for i in range(5):  # iterate layer by layer
         for c in n:
-            output += d[int(c)].split("\n")[1: 6][i] + " "
+            output += d[int(c)].split("\n")[1:6][i] + " "
         output += "\n"
     return output
 
@@ -77,7 +77,7 @@ digits = [
     ###
       #
     ###
-    """
+    """,
 ]
 
 n = input("Choose an integer number non-negative:\t")
